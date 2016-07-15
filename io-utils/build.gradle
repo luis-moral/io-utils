@@ -4,7 +4,7 @@ apply from : '../gradle/license/license.gradle'
 apply from : '../gradle/eclipse/java.gradle'
 
 group = 'es.molabs'
-version = '1.0.0'
+version = '1.0.1'
 
 jar {
     manifest {

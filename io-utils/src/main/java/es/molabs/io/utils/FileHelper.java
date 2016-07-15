@@ -37,6 +37,11 @@ public class FileHelper
 		return getFiles(path, false, EXTENSION_PROPERTIES);
 	}
 	
+	public static URL[] getFiles(URL path, boolean recursive) throws IOException
+	{
+		return getFiles(path, recursive, EXTENSION_PROPERTIES);
+	}
+	
 	public static URL[] getFiles(URL path, boolean recursive, String...extensions) throws IOException
 	{
 		URL[] urls = null;
