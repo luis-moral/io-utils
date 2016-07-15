@@ -1,0 +1,22 @@
+apply plugin: 'eclipse'
+
+
+eclipse
+{
+	jdt
+	{
+		sourceCompatibility = sourceCompatibility
+		targetCompatibility = sourceCompatibility
+	}
+	
+	/*classpath 
+	{
+		containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')		
+		containers.add('org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-' + sourceCompatibility)
+    }*/
+    
+    project
+    {
+    	natures 'org.springsource.ide.eclipse.gradle.core.nature'
+    }
+}

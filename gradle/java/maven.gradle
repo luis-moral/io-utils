@@ -1,0 +1,48 @@
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+signing {
+    sign configurations.archives
+}
+
+uploadArchives {
+  repositories {
+    mavenDeployer {
+      beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+      repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+		authentication(userName: ossrhUsername, password: ossrhPassword)
+      }
+
+      snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+		authentication(userName: ossrhUsername, password: ossrhPassword)
+      }
+
+      pom.project {
+		name 'IO Utils'
+        packaging 'jar'
+		description 'IO and File utils.'
+        url 'https://github.com/luis-moral/io-utils'
+		
+		scm {
+			url 'https://github.com/luis-moral/io-utils.git'
+        }
+		
+		licenses {
+          license {
+            name 'The Apache License, Version 2.0'
+            url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+          }
+        }
+		
+        developers {
+          developer {
+            id 'luis-moral'
+            name 'Luis Moral Guerrero'
+            email 'luis.moral@gmail.com'
+          }
+        }
+      }
+    }
+  }
+}

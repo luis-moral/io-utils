@@ -1,0 +1,2 @@
+// Crea un proyecto sin natures de eclipse
+apply plugin: 'eclipse'
