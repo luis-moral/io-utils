@@ -181,9 +181,9 @@ public class FileWatcherRunnable implements Runnable
 		{
 			// If the service was closed, ignore the error and finish the execution
 		}
-		catch (Throwable t)
+		catch (Exception e)
 		{
-			logger.error(t.getLocalizedMessage(), t);
+			logger.error(e.getLocalizedMessage(), e);
 		}
 	}
 }
